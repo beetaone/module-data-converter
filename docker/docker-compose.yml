@@ -5,7 +5,7 @@ services:
       context: ../
       dockerfile: docker/Dockerfile
     environment:
-      MODULE_NAME: "boilerplate"
+      MODULE_NAME: "data-converter"
       MODULE_TYPE: "Processing"
       INGRESS_HOST: "0.0.0.0"
       INGRESS_PORT: "80"
