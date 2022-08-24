@@ -37,6 +37,7 @@ def iee754_float_type(value):
         if (is_ieee754_float()):
             return True
         return False
+    return False
 
 
 def text_string_type(value):
@@ -50,6 +51,7 @@ def hex_string_type(value):
         if is_hex(value):
             return True
         return False
+    return False
 
 
 def data_type_validator(fromtype, value):
