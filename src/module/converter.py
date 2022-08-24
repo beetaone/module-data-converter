@@ -11,7 +11,7 @@ def is_hex(str_value):
         return not set(str_value) - set("ABCDEFabcdef0123456789")
 
 
-def is_ieee_547_float(value: bytes):
+def is_ieee754_float(value: bytes):
     try:
         struct.unpack('f', value)
         return True
@@ -32,9 +32,9 @@ def int_type(value):
     return False
 
 
-def iee547_float_type(value):
+def iee754_float_type(value):
     if type(value) == bytes:
-        if (is_ieee_547_float()):
+        if (is_ieee754_float()):
             return True
         return False
 
@@ -42,18 +42,20 @@ def iee547_float_type(value):
 def text_string_type(value):
     if type(value) == str:
         return True
+    return False
 
 
 def hex_string_type(value):
     if type(value) == str:
         if is_hex(value):
             return True
+        return False
 
 
 def data_type_validator(fromtype, value):
     types_validator = {
         'int': int_type(value),
-        "iee754 float": iee547_float_type(value),
+        "iee754 float": iee754_float_type(value),
         "text": text_string_type(value),
         "hex": hex_string_type(value),
     }
@@ -130,9 +132,9 @@ def any_conversion(conversion, value):
     return "no possible conversation"
 
 
-def get_from_dict(dataDict, mapList):
-    return reduce(operator.getitem, mapList, dataDict)
+def get_from_dict(data_dict, map_list):
+    return reduce(operator.getitem, map_list, data_dict)
 
 
-def set_in_dict(dataDict, mapList, value):
-    get_from_dict(dataDict, mapList[:-1])[mapList[-1]] = value
+def set_in_dict(data_dict, map_list, value):
+    get_from_dict(data_dict, map_list[:-1])[map_list[-1]] = value
