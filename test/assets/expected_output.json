@@ -19,6 +19,19 @@
             "name": "Bob",
             "email": "bob32@gmail.com",
             "age": 41
-        }
+        },
+{
+"manufacturer" : "weeve",
+"device" :{
+"SN" : "1232",
+"newobj":{
+        "a":12,
+        "b":253
+},
+"year" : 2021
+}
+}
+
     ]
+  
 }

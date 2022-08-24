@@ -32,9 +32,8 @@ def module_main(received_data: any) -> [any, str]:
         conversion = str("from " + getenv('FROM_TYPE') + " to " + getenv('TO_TYPE'))
         print("data to convert ", data_to_convert)
         if (data_type_validator(getenv('FROM_TYPE'), data_to_convert)):
-            any_conversion(conversion, data_to_convert)
-        # set_in_dict update the input dictionary (json) with the new value after the conversation
-        set_in_dict(received_data, getenv('INPUT_KEY').split('.'), any_conversion(conversion, data_to_convert))
+            #  update the input dictionary (json) with the new value after the conversion
+            set_in_dict(received_data, getenv('INPUT_KEY').split('.'), any_conversion(conversion, data_to_convert))
         print("data output  ", received_data)
 
         send_error = send_data(received_data)
