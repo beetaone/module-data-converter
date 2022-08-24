@@ -36,7 +36,6 @@ def iee754_float_type(value):
     if type(value) == bytes:
         if (is_ieee754_float()):
             return True
-        return False
     return False
 
 
@@ -50,7 +49,6 @@ def hex_string_type(value):
     if type(value) == str:
         if is_hex(value):
             return True
-        return False
     return False
 
 

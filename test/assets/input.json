@@ -14,17 +14,6 @@
             "name": "John",
             "email": "john@gmail.com",
             "age": 33
-        },
-{
-"manufacturer" : "weeve",
-"device" :{
-"SN" : "1232",
-"newobj":{
-        "a":12,
-        "b":"0xFD"
-},
-"year" : 2021
-}
-}
+        }
     ]
 }
