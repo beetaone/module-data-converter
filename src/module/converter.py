@@ -1,4 +1,3 @@
-from os import getenv
 from functools import reduce  # forward compatibility for Python 3
 import operator
 import struct

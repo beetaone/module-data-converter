@@ -6,27 +6,11 @@ from os import getenv
 from logging import getLogger
 from bottle import run
 from api import setup_logging
-from module.module import module_main
 
 setup_logging()
 log = getLogger("main")
 
 def main():
-    """
-    json_data = {
-            "manufacturer" : "weeve",
-            "device" :{
-            "SN" : "1232",
-            "newobj":{
-                "a":12,
-                "b":"qw"
-            },
-            "year" : 2021
-            }
-            }
-    """
-    #module_main(json_data)
-    
     log.info(
         "%s running on %s at port %s with end-point set to %s",
         getenv("MODULE_NAME"),
@@ -34,7 +18,6 @@ def main():
         getenv("INGRESS_PORT"),
         getenv("EGRESS_URLS"),
     )
-    
 
     # start the server
     run(
