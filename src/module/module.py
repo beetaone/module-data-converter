@@ -10,6 +10,7 @@ from module.converter import *
 from api.send_data import send_data
 log = getLogger("module")
 
+
 def module_main(received_data: any) -> [any, str]:
     """
     Process received data by implementing module's main logic.
@@ -27,20 +28,20 @@ def module_main(received_data: any) -> [any, str]:
     log.debug("Processing ...")
 
     try:
-        data_to_convert = detect_input(getenv('INPUT_KEY'),received_data)
-        conversion = str("from "+getenv('FROM_TYPE')+" to "+getenv('TO_TYPE'))
-        print("data to convert ",data_to_convert)
-        if (data_type_validator(getenv('FROM_TYPE'),data_to_convert)):
-            print("conversion ",conversion)
-            any_conversion(conversion,data_to_convert)
-        setInDict(received_data,getenv('INPUT_KEY').split('.'),any_conversion(conversion,data_to_convert))
-        print("output  ",received_data)
-        
+        data_to_convert = detect_input(getenv('INPUT_KEY'), received_data)
+        conversion = str("from " + getenv('FROM_TYPE') + " to " + getenv('TO_TYPE'))
+        print("data to convert ", data_to_convert)
+        if (data_type_validator(getenv('FROM_TYPE'), data_to_convert)):
+            any_conversion(conversion, data_to_convert)
+        # set_in_dict update the input dictionary (json) with the new value after the conversation
+        set_in_dict(received_data, getenv('INPUT_KEY').split('.'), any_conversion(conversion, data_to_convert))
+        print("data output  ", received_data)
+
         send_error = send_data(received_data)
         if send_error:
             log.error(send_error)
         else:
             log.debug("Data sent.")
-    
+
     except Exception as e:
         return None, f"Exception in the module business logic: {e}"

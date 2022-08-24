@@ -2,7 +2,7 @@
 
 |              |                                                                  |
 | ------------ | ---------------------------------------------------------------- |
-| name         | data converter                                                   |
+| name         | Data Converter                                                   |
 | version      | v1.0.0                                                           |
 | GitHub       | [data-converter](https://github.com/weeve-modules/data-converter)|
 | authors      | Ghassen Barbouchi                                                |
@@ -10,7 +10,7 @@
 ***
 ## Table of Content
 
-- [data converter](#data-converter)
+- [Data Converter](#data-converter)
   - [Table of Content](#table-of-content)
   - [Description](#description)
      - [Features](#features)
