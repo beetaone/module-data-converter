@@ -1,15 +1,15 @@
 version: "3.0"
 networks:
   default:
-    name: data-converter_network
+    name: boilerplate_network
 services:
 
-  data-converter:
-    # image: weevenetwork/data-converter
+  boilerplate:
+    # image: weevenetwork/boilerplate
     build:
       context: ../
       dockerfile: docker/Dockerfile
-    container_name: data-converter_test_container
+    container_name: boilerplate_test_container
     ports:
       - 80:80
     env_file:
