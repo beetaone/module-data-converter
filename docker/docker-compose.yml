@@ -1,6 +1,6 @@
 version: "3.0"
 services:
-  boilerplate:
+  data-converter:
     build:
       context: ../
       dockerfile: docker/Dockerfile
