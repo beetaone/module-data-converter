@@ -10,13 +10,15 @@ image:
   name: 'weevenetwork/data-converter'     # Image name from the docker registry.
   tag: 'v1.0.0'                               # Image tag from the docker registry.
   homepage: 'https://hub.docker.com/r/weevenetwork/data-converter'      # Image homepage from the docker registry.
-repository: 'https://github.com/weevennetwork/data-converter'     # Repository URL to source code.
+repository: 'https://github.com/weeve-modules/data-converter'     # Repository URL to source code.
 envs:                                   # Array of environment variables that will be used to configure the module. Also used to show related fields on the UI.
   - name: Input Key
     key: INPUT_KEY
     description: key of the value to convert
     value: ''
     type: 'text'
+    options: []
+    dependencies: []
   - name: From Type                  # name of the field to be displayed on the UI.
     key: FROM_TYPE                # key to set in the environment variables.
     description: The input data type    # Description/helper text for the field.
@@ -27,6 +29,7 @@ envs:                                   # Array of environment variables that wi
       - ieee754 float
       - text
       - hex
+    dependencies: []
   - name: to Type                  # name of the field to be displayed on the UI.
     key: TO_TYPE                # key to set in the environment variables.
     description: The output data type    # Description/helper text for the field.
@@ -37,9 +40,16 @@ envs:                                   # Array of environment variables that wi
       - ieee754 float
       - text
       - hex
+    dependencies: []
+ports: []
+envPorts: []
+mounts: []
+envMounts: []
+devices: []
+envDevices: []
 tags:                                   # Array of tags.
   - 'Python'
   - 'Processing'
   - 'data-converter'
-  - 'data-converter 1.0.0'
+  - 'v1.0.0'
 icon: 'https://some.url/to/icon.png'    # Icon URL that will be displayed in the UI.
