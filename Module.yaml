@@ -1,4 +1,4 @@
-displayName: 'data converter'       # Display name for the module that will be displayed in the UI.
+displayName: 'Data Converter'       # Display name for the module that will be displayed in the UI.
 moduleName: 'data-converter'        # Module name that will be used to reference the module, and uniquely identify the module and their versions.
 description: 'This module allows user to convert input data from and to [int,ieee754 float,string text,string hex] and forward the new data to next module .'       # Module description that will be displayed in the UI.
 versionName: 'v1.0.0'                    # Module version name that will be used to reference the module version, and uniquely identify the module version with a common name.
