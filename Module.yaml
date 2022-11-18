@@ -47,7 +47,7 @@ mounts: []
 envMounts: []
 devices: []
 envDevices: []
-tags:                                   # Array of tags.
+tags:                                   
   - 'Python'
   - 'Processing'
   - 'data-converter'
