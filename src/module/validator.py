@@ -74,8 +74,7 @@ def text_string_type(value):
 
 
 def hex_string_type(value):
-    if type(value) == str:
-        if is_hex(value):
+    if type(value) == str and is_hex(value):
             return True
     return False
 
