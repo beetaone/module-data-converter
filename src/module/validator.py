@@ -62,8 +62,7 @@ def int_type(value):
 
 
 def iee754_float_type(value):
-    if type(value) == bytes:
-        if is_ieee754_float():
+    if type(value) == bytes and is_ieee754_float():
             return True
     return False
 
