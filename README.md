@@ -3,7 +3,7 @@
 |           |                                                                        |
 | --------- | ---------------------------------------------------------------------- |
 | Name      | Data Converter                                                         |
-| Version   | v1.0.1                                                                 |
+| Version   | v1.0.2                                                                 |
 | DockerHub | [data-converter](https://hub.docker.com/r/weevenetwork/data-converter) |
 | Authors   | Ghassen Barbouchi                                                      |
 

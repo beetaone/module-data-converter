@@ -4,10 +4,9 @@ Validates whether the incoming data has an acceptable type and structure.
 Edit this file to verify data expected by you module.
 """
 
+from os import getenv
 from logging import getLogger
 import struct
-
-log = getLogger("validator")
 
 
 def data_validation(data: any) -> str:
@@ -39,15 +38,17 @@ def data_validation(data: any) -> str:
         return f"Exception when validating module input data: {e}"
 
 
-def is_hex(str_value):
-    if str_value.startswith("0x"):
-        str_value_0x = str_value[2:]
-        return not set(str_value_0x) - set("ABCDEFabcdef0123456789")
-    else:
-        return not set(str_value) - set("ABCDEFabcdef0123456789")
+def is_hex(value):
+    if type(value) != str:
+        return False
+    if value.startswith("0x"):
+        value = value[2:]
+    return not set(value) - set("ABCDEFabcdef0123456789")
 
 
 def is_ieee754_float(value: bytes):
+    if type(value) != bytes:
+        return False
     try:
         struct.unpack("f", value)
         return True
@@ -55,36 +56,24 @@ def is_ieee754_float(value: bytes):
         return False
 
 
-def int_type(value):
-    if type(value) == int:
-        return True
-    return False
+def is_int(value):
+    return type(value) == int
 
 
-def iee754_float_type(value):
-    if type(value) == bytes and is_ieee754_float():
-            return True
-    return False
+def is_text(value):
+    return type(value) == str
 
 
-def text_string_type(value):
-    if type(value) == str:
-        return True
-    return False
+types_validator = {
+    "int": is_int,
+    "iee754 float": is_ieee754_float,
+    "text": is_text,
+    "hex": is_hex,
+}
 
+log = getLogger("validator")
 
-def hex_string_type(value):
-    if type(value) == str and is_hex(value):
-            return True
-    return False
-
-
-def is_correct_data_type(fromtype, value):
-    types_validator = {
-        "int": int_type(value),
-        "iee754 float": iee754_float_type(value),
-        "text": text_string_type(value),
-        "hex": hex_string_type(value),
-    }
-
-    return types_validator.get(fromtype, "Mismatching input type")
+if getenv("FROM_TYPE") not in types_validator:
+    log.error("Cannot covert from type " + getenv("FROM_TYPE"))
+    exit(1)
+is_correct_data_type = types_validator[getenv("FROM_TYPE")]
