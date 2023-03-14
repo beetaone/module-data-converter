@@ -1,7 +1,7 @@
 SHELL := /bin/bash # to enable source command in run_app
 
 MODULE=weevenetwork/data-converter
-VERSION_NAME=v1.0.2
+VERSION_NAME=v1.0.3
 
 install_dev:
 	python3 -m pip install -r requirements_dev.txt
