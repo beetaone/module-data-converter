@@ -4,7 +4,7 @@
 | --------- | ---------------------------------------------------------------------- |
 | Name      | Data Converter                                                         |
 | Version   | v1.0.3                                                                 |
-| DockerHub | [data-converter](https://hub.docker.com/r/weevenetwork/data-converter) |
+| DockerHub | [data-converter](https://hub.docker.com/r/beetaone/data-converter) |
 | Authors   | Ghassen Barbouchi                                                      |
 
 ***
@@ -16,7 +16,7 @@
     - [Features](#features)
   - [Module Variables](#module-variables)
     - [Module Specific](#module-specific)
-    - [Set by the weeve Agent on the edge-node](#set-by-the-weeve-agent-on-the-edge-node)
+    - [Set by the beetaone Agent on the edge-node](#set-by-the-beetaone-agent-on-the-edge-node)
   - [Dependencies](#dependencies)
   - [Input](#input)
   - [Output](#output)
@@ -41,9 +41,9 @@ The function of this module is to convert the selected input of the previous mod
 | FROM_TYPE             | string | Input type                     |
 | TO_TYPE               | string | Output type                    |
 
-### Set by the weeve Agent on the edge-node
+### Set by the beetaone Agent on the edge-node
 
-There are 5 module variables that are required by each module to correctly function within weeve ecosystem. In development, these variables can overridden for testing purposes. In production, these variables are set by weeve Agent.
+There are 5 module variables that are required by each module to correctly function within beetaone ecosystem. In development, these variables can overridden for testing purposes. In production, these variables are set by beetaone Agent.
 
 | Environment Variables | type   | Description                                                                                          |
 | --------------------- | ------ | ---------------------------------------------------------------------------------------------------- |
@@ -73,7 +73,7 @@ Input example:
 
 ```json
 {
-"manufacturer" : "weeve",
+"manufacturer" : "beetaone",
 "device" :{
 "SN" : "1232",
 "newobj":{
@@ -90,7 +90,7 @@ output example in case the input key is : "device.newobj.b" , the fromType :"hex
 
 ```json
 {
-"manufacturer" : "weeve",
+"manufacturer" : "beetaone",
 "device" :{
 "SN" : "1232",
 "newobj":{
@@ -101,4 +101,3 @@ output example in case the input key is : "device.newobj.b" , the fromType :"hex
 }
 }
 ```
-

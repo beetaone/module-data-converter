@@ -11,7 +11,7 @@
   - [Description](#description)
   - [Environment Variables](#environment-variables)
     - [Module Specific](#module-specific)
-    - [Set by the weeve Agent on the edge-node](#set-by-the-weeve-agent-on-the-edge-node)
+    - [Set by the beetaone Agent on the edge-node](#set-by-the-beetaone-agent-on-the-edge-node)
   - [Dependencies](#dependencies)
   - [Input](#input)
   - [Output](#output)
@@ -24,7 +24,7 @@ This is module description. This explains in detail what module does.
 
 ### Module Specific
 
-The following module configurations can be provided in a data service designer section on weeve platform:
+The following module configurations can be provided in a data service designer section on beetaone platform:
 
 | Name                 | Environment Variables     | type     | Description                                              |
 | -------------------- | ------------------------- | -------- | -------------------------------------------------------- |
@@ -33,9 +33,9 @@ The following module configurations can be provided in a data service designer s
 | Environment Var 3    | ENVIRONMENT_VAR_3         | boolean  | Description what this environment represents.            |
 
 
-### Set by the weeve Agent on the edge-node
+### Set by the beetaone Agent on the edge-node
 
-Other features required for establishing the inter-container communication between modules in a data service are set by weeve agent.
+Other features required for establishing the inter-container communication between modules in a data service are set by beetaone agent.
 
 | Environment Variables | type   | Description                                    |
 | --------------------- | ------ | ---------------------------------------------- |

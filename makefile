@@ -1,6 +1,6 @@
 SHELL := /bin/bash # to enable source command in run_app
 
-MODULE=weevenetwork/data-converter
+MODULE=beetaone/data-converter
 VERSION_NAME=v1.0.3
 
 install_dev:
@@ -56,4 +56,4 @@ run_listener:
 	-e LOG_HTTP_HEADERS=true \
 	--name listener \
 	jmalloc/echo-server
-.phony: run_listener
+.phony: run_listenerener
